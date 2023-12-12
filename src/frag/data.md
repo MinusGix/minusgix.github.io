@@ -32,3 +32,6 @@ fn fragment(in: VertexOutput) -> @location(0) vec4<f32> {
 This has the obvious outcome. Choose the color from your Rust code, and then return it in the fragment shader.  
   
 Note: The number you choose matters! It is what goes in `@binding`.
+
+
+TODO: struct
