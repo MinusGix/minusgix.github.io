@@ -1,0 +1,9 @@
+[book]
+authors = ["MinusGix"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Minus's Bevy Shader Notes"
+
+[output.html]
+mathjax-support = true
