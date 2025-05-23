@@ -37,7 +37,7 @@ Where $U \subseteq X$ is some open set within $X$.
 
 As well, a Sheaf is also a Presheaf which has some minor constraints. See [here](#presheaves)
 
-This data could be many things:
+This data could be many things: 
 
 > [!note]
 > **Continuous functions**
