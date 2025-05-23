@@ -1,0 +1,30 @@
+{{ define "main" }}
+
+<div id="layout">
+<article>
+
+{{ partial "content.header.html" . }}
+
+{{ with .Content }}
+<section>
+{{ . }}
+</section>
+{{ end }}
+
+<section class="list-page">
+<ul>
+{{ range .Pages.ByTitle }}
+{{ if .IsPage }}
+<li><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}}&nbsp;:: Draft{{- end -}}</a></li>
+{{ end }}
+{{ end }}
+</ul>
+</section>
+
+{{ partial "footer.html" . }}
+{{ partial "nav.html" . }}
+
+</article>
+</div>
+
+{{ end }}

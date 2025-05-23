@@ -1,0 +1,24 @@
+<!-- Early theme initialization to prevent flash -->
+<style>
+    /* Prevent FOUC and ensure smooth theme transitions */
+    html {
+        visibility: visible;
+        opacity: 1;
+        transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    }
+
+    html[data-theme="dark"] {
+        background-color: #21252b;
+        color: #999;
+    }
+</style>
+<script>
+    (function () {
+        const savedMode = localStorage.getItem('dark_mode') || document.documentElement.getAttribute('data-theme-mode') || 'auto';
+        const isAuto = savedMode === 'auto';
+        const isDark = savedMode === 'true' || (isAuto && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (isDark) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    })();
+</script>

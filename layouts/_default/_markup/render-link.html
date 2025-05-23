@@ -1,0 +1,15 @@
+{{- $link := .Destination -}}
+{{- if strings.HasPrefix $link "ncat:" -}}
+{{- $target := replace $link "ncat:" "" -}}
+{{- $target = replace $target "-" "+" -}}
+{{- $target = replace $target " " "+" -}}
+<a href="https://ncatlab.org/nlab/show/{{ $target }}" target="_blank" rel="noopener" style="white-space: nowrap;">
+    {{ .Text | default $target }}
+    <img src="/images/ncatlab-logo.png" alt="nLab" class="ncatlab-logo"
+        style="height: 14px; margin-left: 4px; vertical-align: text-bottom;">
+    <img src="/images/ncatlab-logo-light.png" alt="nLab" class="ncatlab-logo-dark"
+        style="height: 14px; margin-left: 4px; vertical-align: text-bottom;">
+</a>
+{{- else -}}
+<a href="{{ $link }}">{{ .Text }}</a>
+{{- end -}}

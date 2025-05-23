@@ -1,0 +1,44 @@
+{{ define "main" }}
+
+<div id="layout">
+<article>
+
+{{ partial "content.header.html" . }}
+
+{{ with .Content }}
+<section>
+{{ . }}
+</section>
+{{ end }}
+
+<section class="list-page">
+
+<!-- preambles -->
+
+{{- if .RegularPages -}}
+<ul>
+{{ range .RegularPages.ByTitle }}
+<li><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}}&nbsp;:: Draft{{- end -}}</a></li>
+{{ end }}
+</ul>
+{{- end -}}
+
+<!-- sub categories -->
+
+{{- if .Sections -}}
+<ul>
+{{ range .Sections.ByTitle }}
+<li><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}}&nbsp;:: Draft{{- end -}}</a></li>
+{{ end }}
+</ul>
+{{- end -}}
+
+</section>
+
+{{ partial "footer.html" . }}
+{{ partial "nav.html" . }}
+
+</article>
+</div>
+
+{{ end }}

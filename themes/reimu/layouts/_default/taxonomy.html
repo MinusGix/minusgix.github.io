@@ -1,0 +1,17 @@
+{{- define "main" -}}
+  {{- $paginator := .Paginator.Pages.GroupByDate .Site.Params.yearFormat -}}
+  <div
+    class="archives-outer-wrap"
+    data-aos="{{ .Site.Params.animation.options.archive.whole }}"
+  >
+    {{- if .Site.Params.only_show_capsule_in_index -}}
+      {{- if eq .Paginator.PageNumber 1 -}}
+        {{- partialCached "archives.html" . -}}
+      {{- end -}}
+    {{- else -}}
+      {{- partialCached "archives.html" . -}}
+    {{- end -}}
+    {{- partial "list.html" (dict "paginator" $paginator "ctx" .) -}}
+  </div>
+  {{- partial "pagination.html" . -}}
+{{- end -}}

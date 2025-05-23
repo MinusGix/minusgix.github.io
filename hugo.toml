@@ -1,0 +1,17 @@
+baseURL = 'https://minusgix.github.io/'
+languageCode = 'en-us'
+title = "MinusGix's Blog"
+theme = ["hugo-admonitions", "reimu"]
+
+[params]
+[params.math]
+[params.math.katex]
+enable = true
+
+[markup]
+[markup.goldmark.renderer]
+unsafe = true
+hardWraps = true
+
+[markup.goldmark.extensions]
+linkify = true

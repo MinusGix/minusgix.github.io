@@ -1,0 +1,42 @@
+{{ define "main" }}
+<div id="layout">
+<article>
+
+{{- partial "content.header.html" . -}}
+
+<!-- https://discourse.gohugo.io/t/how-to-build-one-collection-for-all-nested-sections/27950/5 -->
+{{- with .Content -}}
+<section>
+{{ . }}
+</section>
+{{- end -}}
+
+<section class="list-page">
+<!-- preambles -->
+
+{{- if .RegularPages -}}
+<ul>
+  {{ range .RegularPages.ByTitle -}}
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}}&nbsp;:: Draft{{- end -}}</a></li>
+  {{ end -}}
+</ul>
+{{- end -}}
+
+<!-- sub categories & pages -->
+
+{{- range .Sections.ByTitle -}}
+<p><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}}&nbsp;:: Draft{{- end -}}</a></p>
+<ul>
+  {{- range .RegularPages.ByTitle -}}
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}{{- if .Draft -}}&nbsp;:: Draft{{- end -}}</a></li>
+  {{- end -}}
+</ul>
+{{- end -}}
+</section>
+
+{{ partial "footer.html" . }}
+{{ partial "nav.html" . }}
+
+</article>
+</div>
+{{ end }}
