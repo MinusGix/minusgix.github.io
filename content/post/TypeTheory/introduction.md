@@ -14,6 +14,10 @@ My focus will tend towards more practical considerations, especially those of so
 
 I will often link out to other works if I think they explain the topic better than I can.  
 
+The core reason that I view it as important to provide these sorts of blog-posts is to spread a formal understanding of Type Theory further afield. In my opinion, many areas of the field lack good explanatory works. Both for those who haven't encountered the "new" but standard concepts such as sheaves, but also for those who have but don't want to spend quite a lot of time untangling a paper or concept themselves.
+
+As well, I view the sheer amount of new concepts that strike at the reader when learning Type Theory (much like Category Theory) harms the ability to understand and get into any sort of flow of understanding a paper. Needing to search up a term is certainly necessary at times, but good pedagogy should try to make it clear what precisely an intuitive meaning of a statement is, and also try to be clear about definitions. This blog often adds reminders/notes throughout, whether ensuring you understand the term being utilized. Repeated reminders that don't distract, with simple explanations rather than the rather dense descriptions elsewhere (sorry nlab, I love you), help to ensure you learn the concept.
+
 ## Reading Order
 
 While there isn't a set reading order, some topics implicitly assume some familiarity with other blogposts or type theory content I haven't even had the opportunity to write about yet!
