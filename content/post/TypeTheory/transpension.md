@@ -37,12 +37,13 @@ $\newcommand\tra{≬}\newcommand\Ty{\text{Ty}}\newcommand\I{\mathbb{I}}\newcomma
 ## Pi-type
 Before we even cover transpension, the new concept introduced by this paper, I find it important to (re)introduce the conception of Pi-type.
 
-To put it most simply, as many readers will already know, a Pi-type is functionally a "forall" statement.  
-$$\forall x : \R, x < x + 1$$
-vs.
+To put it most simply, a Pi-type is simply a *dependent* function type. As the name suggests, it is a concept in dependent type theory.
+
+That is, the *return* type of the function is dependent on the input.  
+
 $$\Pi(x : \R), x < x + 1$$
 
-Functionally these are the same, but we call it the Pi-type because (TODO: why?)
+That is, for some $x : \R$, the return type is an instance of the proposition $x < x + 1$. As always, an instance of a proposition is a proof of that self-same proposition. You can see that this depends on $x$, because it is about this very specific value of $x$. You can not write a non-dependent type version of this.
 
 The typical Type Theory viewpoint of these is that $\Pi(x : \R), P(x)$ up there is *effectively* a function: "I take a real number, and return a proof that $P(x)$ holds for your specific $x$ value."  
 
