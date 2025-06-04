@@ -385,6 +385,11 @@
         <script data-pjax>
           var renderMath = () => {
             if (!window.renderMathInElement) return;
+            {{- $postMacros := dict -}}
+            {{- if .Params.katex_macros -}}
+              {{- $postMacros = .Params.katex_macros -}}
+            {{- end -}}
+            
             window.renderMathInElement(_$("article"), {
               delimiters: [
                 { left: "$$", right: "$$", display: true },
@@ -392,6 +397,11 @@
                 { left: "$", right: "$", display: false },
                 { left: "\\(", right: "\\)", display: false },
               ],
+              trust: true,
+              macros: ({{ $postMacros | jsonify | safeJS }}).reduce((acc, [key, value]) => {
+                acc[key] = value;
+                return acc;
+              }, {})
             });
           };
           if (document.readyState === "loading") {

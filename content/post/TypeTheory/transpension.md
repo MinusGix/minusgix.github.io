@@ -5,6 +5,7 @@ title = 'Transpension'
 tags = ["Type Theory"]
 categories = ["Type Theory"]
 math = true
+katex_macros = [["\\tra", "≬"], ["\\Ty", "\\text{Ty}"], ["\\I", "\\mathbb{I}"], ["\\U", "\\mathbb{U}"], ["\\R", "\\mathbb{R}"], ["\\N", "\\mathbb{N}"]]
 +++
 
 **Topic**: [Transpension: The Right Adjoint to the Pi-type](https://arxiv.org/abs/2008.08533) by Andres Nuyts and Dominique Devriese.
@@ -31,8 +32,6 @@ The first way to look at it is that it takes multiple existing special-cases of 
 > Tidbit! Pi types are simply 'forall'. -->
 
 ----
-
-$\newcommand\tra{≬}\newcommand\Ty{\text{Ty}}\newcommand\I{\mathbb{I}}\newcommand\U{\mathbb{U}}$
 
 ## Pi-type
 Before we even cover transpension, the new concept introduced by this paper, I find it important to (re)introduce the conception of Pi-type.
@@ -76,7 +75,7 @@ This paper heavily uses intervals/shapes. See [intervals](./intervals.md) for an
 > Transpension is defined as a type former. It takes in some type in the context and translates it into one which depends upon the interval variable $i$.  
 
 This is a [right-adjoint](ncat:right-adjoint) to the Pi-type former:  
-$$\Pi(i : \I) : \Ty(\Gamma, i : \I) \to \Ty(\Gamma)$
+$$\Pi(i : \I) : \Ty(\Gamma, i : \I) \to \Ty(\Gamma)$$
 
 Remember our discussion about Pi-types before, that they take two types. The input type, and a second type which can depend on the value of the first. That is effectively what is being said here, with $i : \I$ simply being the first parameter like quantifying over an $n : \N$.  
 $Ty(\Gamma, i : \I)$ is specifying the second type, which will be the type of the resulting value. It depends on the context and on the first value given. The last $\Ty(\Gamma)$, to be quite clear, is merely the resulting Pi-type that has been formed.  
