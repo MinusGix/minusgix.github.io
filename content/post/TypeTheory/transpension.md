@@ -8,7 +8,7 @@ math = true
 katex_macros = [["\\tra", "≬"], ["\\Ty", "\\text{Ty}"], ["\\I", "\\mathbb{I}"], ["\\U", "\\mathbb{U}"], ["\\R", "\\mathbb{R}"], ["\\N", "\\mathbb{N}"]]
 +++
 
-**Topic**: [Transpension: The Right Adjoint to the Pi-type](https://arxiv.org/abs/2008.08533) by Andres Nuyts and Dominique Devriese.
+**Topic**: [Transpension: The Right Adjoint to the Pi-type](arxiv:2008.08533) by Andres Nuyts and Dominique Devriese.
 
 **Abstract**:
 > Presheaf models of dependent type theory have been successfully applied to model HoTT, parametricity, and directed, guarded and nominal type theory. There has been considerable interest in internalizing aspects of these presheaf models, either to make the resulting language more expressive, or in order to carry out further reasoning internally, allowing greater abstraction and sometimes automated verification. While the constructions of presheaf models largely follow a common pattern, approaches towards internalization do not. Throughout the literature, various internal presheaf operators (\surd, \Phi/\mathsf{extent}, \Psi/\mathsf{Gel}, \mathsf{Glue}, \mathsf{Weld}, \mathsf{mill}, the strictness axiom and locally fresh names) can be found and little is known about their relative expressivenes. Moreover, some of these require that variables whose type is a shape (representable presheaf, e.g. an interval) be used affinely. We propose a novel type former, the transpension type, which is right adjoint to universal quantification over a shape. Its structure resembles a dependent version of the suspension type in HoTT. We give general typing rules and a presheaf semantics in terms of base category functors dubbed multipliers. Structural rules for shape variables and certain aspects of the transpension type depend on characteristics of the multiplier. We demonstrate how the transpension type and the strictness axiom can be combined to implement all and improve some of the aforementioned internalization operators (without formal claim in the case of locally fresh names).
@@ -17,7 +17,7 @@ katex_macros = [["\\tra", "≬"], ["\\Ty", "\\text{Ty}"], ["\\I", "\\mathbb{I}"]
 
 Wow, the second blogpost and I'm talking about Transpension of all things.
 
-Specifically, [Transpension: The Right Adjoint to the Pi-type](https://arxiv.org/abs/2008.08533) by Andres Nuyts and Dominique Devriese. This is the paper referred to by ND24, seen in some of Andreas' presentations like [https://www.math.uwo.ca/faculty/kapulkin/seminars/hottestfiles/Nuyts-2024-05-02-HoTTEST.pdf](https://www.math.uwo.ca/faculty/kapulkin/seminars/hottestfiles/Nuyts-2024-05-02-HoTTEST.pdf)
+Specifically, [Transpension: The Right Adjoint to the Pi-type](arxiv:2008.08533) by Andres Nuyts and Dominique Devriese. This is the paper referred to by ND24, seen in some of Andreas' presentations like [https://www.math.uwo.ca/faculty/kapulkin/seminars/hottestfiles/Nuyts-2024-05-02-HoTTEST.pdf](https://www.math.uwo.ca/faculty/kapulkin/seminars/hottestfiles/Nuyts-2024-05-02-HoTTEST.pdf)
 
 This paper came to my interest due to the mention in the slides linked above of using [MTT](./MultimodalTypeTheory.md) (Multimodal Type Theory) for 'variance', and MTras (Modal Transpension System) for substructural intervals.  
 I like substructurality. I think it makes a type theory much nicer as a programming language, as such a nature better models the reality of programs (copying is not free) and allows expressing meaningful constraints directly without needing to abstract out.  
@@ -47,15 +47,15 @@ That is, for some $x : \R$, the return type is an instance of the proposition $x
 The typical Type Theory viewpoint of these is that $\Pi(x : \R), P(x)$ up there is *effectively* a function: "I take a real number, and return a proof that $P(x)$ holds for your specific $x$ value."  
 
 However, an important tidbit here that may not be immediately obvious when thinking about for-all, is that a Pi-type is not necessarily restricted to just Propositions. You could very well have, for example,
-$$\Pi(n : \N), \text{Array} n$$  
+$$\Pi(n : \N), \text{Array}\ n$$  
 That is, it constructs an instance of a type for you. You give this a natural number, and you get a type back that depends on the natural number you gave it.
 
 You can do very well thinking of Pi-types and forall as fancy functions. (TODO: are they equivalent to functions? where do they depart?)
 
 But an important thing to remember is that we are calling this a Pi-type.  
 As an example:
-$$zeroes : \Pi(n : \N), \text{Array} n := [0, \dots^n, 0]$$
-$$counting : \Pi(n : \N), \text{Array} n := [0, 1, 2, \dots, n]$$
+$$zeroes : \Pi(n : \N), \text{Array}\ n := [0, \dots^n, 0]$$
+$$counting : \Pi(n : \N), \text{Array}\ n := [0, 1, 2, \dots, n]$$
 
 Are both perfectly valid instances of the Pi-type.  
 

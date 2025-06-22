@@ -390,6 +390,10 @@
               {{- $postMacros = .Params.katex_macros -}}
             {{- end -}}
             
+            let macros = ({{ $postMacros | jsonify | safeJS }});
+            if (!Array.isArray(macros)) {
+              macros = [];
+            }
             window.renderMathInElement(_$("article"), {
               delimiters: [
                 { left: "$$", right: "$$", display: true },
@@ -398,7 +402,7 @@
                 { left: "\\(", right: "\\)", display: false },
               ],
               trust: true,
-              macros: ({{ $postMacros | jsonify | safeJS }}).reduce((acc, [key, value]) => {
+              macros: macros.reduce((acc, [key, value]) => {
                 acc[key] = value;
                 return acc;
               }, {})

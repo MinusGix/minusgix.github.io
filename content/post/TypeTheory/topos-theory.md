@@ -477,13 +477,13 @@ theorem internal_minimum:
 
 The **Kripke-Joyal semantics** translates internal statements to external ones:
 
-| Internal Statement | External Meaning in $\text{Sh}(X)$ |
-|-------------------|-----------------------------------|
-| $\phi \wedge \psi$ | $\phi$ and $\psi$ both hold |
-| $\phi \vee \psi$ | Locally, either $\phi$ or $\psi$ holds |
+| Internal Statement      | External Meaning in $\text{Sh}(X)$                   |
+| ----------------------- | ---------------------------------------------------- |
+| $\phi \wedge \psi$      | $\phi$ and $\psi$ both hold                          |
+| $\phi \vee \psi$        | Locally, either $\phi$ or $\psi$ holds               |
 | $\phi \Rightarrow \psi$ | On any smaller open where $\phi$ holds, $\psi$ holds |
-| $\forall x: A. \phi(x)$ | For all sections $x$ of $A$, $\phi(x)$ holds |
-| $\exists x: A. \phi(x)$ | Locally, there exists a section $x$ with $\phi(x)$ |
+| $\forall x: A. \phi(x)$ | For all sections $x$ of $A$, $\phi(x)$ holds         |
+| $\exists x: A. \phi(x)$ | Locally, there exists a section $x$ with $\phi(x)$   |
 
 > [!note]
 > **Forcing Relation**: For a sheaf topos $\text{Sh}(X)$, an open set $U$ forces a formula $\phi$ (written $U \Vdash \phi$) when $\phi$ holds on $U$ in the internal logic.
@@ -965,13 +965,13 @@ Every topos can be presented by a geometric theory:
 > The theory $\mathbb{T}_{\mathcal{E}}$ can be taken as the theory of "canonical sites" of $\mathcal{E}$.
 
 This gives us a dictionary:
-| Topos Concept | Theory Concept |
-|---------------|----------------|
-| Object | Sort/Type |
-| Morphism | Functional relation |
-| Subobject | Predicate |
-| Epimorphism | Surjective function |
-| Finite limit | Equations |
+| Topos Concept | Theory Concept      |
+| ------------- | ------------------- |
+| Object        | Sort/Type           |
+| Morphism      | Functional relation |
+| Subobject     | Predicate           |
+| Epimorphism   | Surjective function |
+| Finite limit  | Equations           |
 
 ### Higher Topoi: The $\infty$-Categorical Perspective
 
